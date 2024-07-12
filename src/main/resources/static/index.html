@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connected Users</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom Loader Styles */
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #3498db; /* Blue background */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000; /* Ensure loader appears above everything */
+      transition: opacity 0.3s ease; /* Fade animation */
+      opacity: 1; /* Initially visible */
+    }
+
+    .loader {
+      border: 4px solid rgba(255, 255, 255, 0.3); /* Lighter border */
+      border-radius: 50%;
+      border-top: 4px solid #1d3af7; /* White top border */
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Hide loader when main content is loaded */
+    body.loaded .loader-container {
+      opacity: 0;
+      pointer-events: none; /* Disable interaction with loader */
+    }
+  </style>
+</head>
+<body>
+  <!-- Loader Section -->
+  <div class="loader-container" id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="container" id="mainContent" style="display: none;">
+    <div class="left-section">
+      <div class="image-container">
+        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202003/Apple_FaceTime__main.jpeg?size=690:388" alt="Image">
+      </div>
+      <div class="actions">
+        <button id="newMeetingBtn"><i class="fa fa-video-camera"></i> Create a New Meeting</button>
+        <div class="join-meeting">
+          <input type="text" placeholder="Meeting ID" id="meetingName">
+          <button id="joinMeetingBtn"><i class="fa fa-sign-in"></i> Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="header">
+        <button id="logoutBtn"><i class="fa fa-sign-out"></i> Logout</button>
+      </div>
+      <div class="connected-users">
+        <h2>Connected Users</h2>
+        <ul id="userList">
+          <li><div class="user-info"><i class="fa fa-user"></i> Yashi (yashi@mail.com)</div><div class="status"><i class="fa fa-circle online"></i></div></li>
+          <li><div class="user-info"><i class="fa fa-user"></i> Shipra (shipra@mail.com)</div><div class="status"><i class="fa fa-circle online"></i></div></li>
+          <li><div class="user-info"><i class="fa fa-user"></i> Devansh (devansh@mail.com)</div><div class="status"><i class="fa fa-circle online"></i></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/index.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        document.getElementById('loader').style.opacity = '0'; // Hide loader
+        document.getElementById('loader').style.pointerEvents = 'none'; // Disable interaction with loader
+        document.getElementById('mainContent').style.display = 'flex'; // Show main content
+        document.body.classList.add('loaded'); // Add loaded class to body
+      }, 2000); // 2000 milliseconds = 2 seconds
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.loader {
+    border: 12px solid #f3f3f3; /* Light grey */
+    border-top: 12px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container {
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.left-section, .right-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actions button, .join-meeting button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.actions button {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.actions button:hover {
+    background-color: #0056b3;
+}
+
+.join-meeting {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.join-meeting input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.join-meeting button {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.join-meeting button:hover {
+    background-color: #45a049;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#logoutBtn {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#logoutBtn:hover {
+    background-color: #c0392b;
+}
+
+.connected-users {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.connected-users h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 10px;
+}
+
+#userList {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+#userList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#userList li:hover {
+    background-color: #ecf0f1;
+}
+
+#userList li:last-child {
+    border-bottom: none;
+}
+
+#userList .user-info {
+    display: flex;
+    align-items: center;
+}
+
+#userList .user-info i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+#userList .status i {
+    font-size: 18px;
+}
+
+#userList li i.online {
+    color: #2ecc71;
+}
+
+#userList li i.offline {
+    color: #e74c3c;
+}
+.fa{
+    margin-right: 10px;
+}

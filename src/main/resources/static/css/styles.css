@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.login-card, .social-icons {
+    background-color: #ffffff;
+    padding: 60px 40px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px; /* Added margin */
+}
+
+.login-card {
+    max-width: 400px;
+    flex: 1; /* Allowing the card to grow */
+}
+
+.social-icons {
+    max-width: 200px;
+    flex: 1; /* Allowing the icons to grow */
+}
+
+.login-card h2, .social-icons h2 {
+    margin-bottom: 30px; /* Increased margin */
+    color: #333;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px; /* Increased margin */
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.login-card p {
+    margin-top: 20px; /* Increased margin */
+}
+
+.login-card a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 10px; /* Increased margin */
+    width: 50px; /* Increased width */
+    height: 50px; /* Increased height */
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    line-height: 50px; /* Adjusted line-height */
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #45a049;
+}
+
+.social-icons i {
+    font-size: 24px; /* Increased icon size */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .login-card, .social-icons {
+        max-width: 100%;
+    }
+}
